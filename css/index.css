@@ -3,19 +3,30 @@
     src: local('pixel'),
         url(../Nunito/Nunito-VariableFont_wght.ttf);
 }
+
 @font-face {
-    font-family: 'paragraphe' ;
+    font-family: 'paragraphe';
     src: url(../font/PlaywriteID-VariableFont_wght.ttf);
 }
-@font-face{
+
+@font-face {
     font-family: 'head-font';
-    src: url(../font/Fredoka-VariableFont_wdth\,wght.ttf) ;
+    src: url(../font/Fredoka-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'text-head';
+    src: url(../font/ArchivoBlack-Regular.ttf);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 /* premie partie */
@@ -27,7 +38,7 @@ header {
     flex-direction: row;
     gap: 100px;
     width: 100%;
-    height: 70px;
+    height: 10vh;
 }
 
 header h1 {
@@ -87,9 +98,7 @@ header h1 span {
     appearance: none;
 }
 
-/* .nav nav{
-    gap: 30px;
-} */
+
 .nav nav a {
     margin: 0 0 0 20px;
     text-decoration: none;
@@ -97,43 +106,49 @@ header h1 span {
     font-size: 1.2rem;
     font-family: 'Geis-pixel';
 }
-.nav nav .lien{
+
+.nav nav .lien ul {
     display: flex;
     flex-direction: row;
 }
-.nav nav li{
+
+.nav nav li {
     position: relative;
     list-style: none;
     overflow: hidden;
     z-index: 0;
 }
+
 label {
     cursor: pointer;
 }
-
-.nav nav li ::after{
-    content: ' ';
-    position: absolute;
-    background-color: #000000;
-     width: 20px;
-     height: 30px;
-     top: 50%;
-     left: 0;
-     opacity: 0;
-     inset: 0 0 2px 0;
-    /* height: 100%;  */
-    z-index: 2;
-
+.nav nav a {
+    position: relative;
+    display: inline-block; /* pour que le pseudo-élément suive bien la taille du texte */
+    padding-bottom: 5px;
 }
-.nav nav li::before{
-    content: ' ';
+
+.nav nav a::before {
+    content: '';
     position: absolute;
-    background: rgb(2, 221, 75);
+    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    z-index: -5;
-} 
-.intro{
+    height: 2px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-in-out;
+}
+
+.nav nav a:hover::before {
+    transform: scaleX(1);
+}
+
+
+
+
+.intro {
     position: relative;
     background: url(../667522890_916850358001692_6765215188936559410_n\ \(1\).jpg) no-repeat center/cover;
     width: 100%;
@@ -142,62 +157,190 @@ label {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
     overflow: hidden;
     z-index: 0;
 }
-.background{
+
+#search-check,
+#check {
+    display: none;
+}
+
+.background {
     width: 100%;
     height: 100%;
     position: absolute;
     background-color: #30303060;
     z-index: -1;
-    
+
 }
-.intro p{
+
+.intro p {
     font-family: 'paragraphe';
     font-size: 1.1rem;
 }
-.intro h1{
-    font-family:'paragraphe';
+
+.intro h1 {
+    font-family: 'paragraphe';
     font-size: 2.5rem;
-    
+
 }
-.btn{
-    margin: 0 40%;
+
+
+
+.contenue {
+    display: flex;
+    align-items: center;
+    perspective: 500px;
+    gap: 30px;
+    align-items: center;
+    height: 50vh;
+    margin: 30px 5%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 30px;
+    perspective: 1000px;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 1s ease-in-out;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.card:hover {
+    /* transition: 1s ease-in-out; */
+    transform: rotateY(180deg);
+}
+
+.front-img,
+.back_text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    backface-visibility: hidden;
+}
+
+.histoire .front-img {
+    background: url(../image/WhatsApp\ Image\ 2026-07-10\ at\ 10.37.58.jpeg) no-repeat;
+    background-size: cover;
+}
+
+.Gastronomie .front-img {
+    background: url(../image/specialite_hauteur_400px.png) no-repeat;
+    background-size: cover;
+}
+
+.tourisme .front-img {
+    background: url(../image/roche.png) no-repeat center/cover;
+}
+
+.front-img {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fff;
+    font-family: 'text-head';
+}
+
+.back_text {
+    font-size: 1.2rem;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: rotateY(180deg);
+    background: rgba(5, 88, 2, 0.589);
+    text-align: center;
+    color: #fff;
+}
+
+.back_text p {
+    font-family: 'head-font';
+}
+
+.btn {
+    margin: 10px 0;
     align-content: center;
-    background: #ffffff;
-    width: 20%;
+    background: #ffffffc4;
+    width: 150px;
     height: 40px;
     border-radius: 30px;
+    font-family: 'head-font';
+    transition: all 0.8s ease-in-out;
 }
-.btn a{
+
+/*checkerd search bar element:has permet de selectionner un element meme si il ne sont pas dans le meme contenair où frère*/
+/* body:has(#search-check:checked) .search-content{
+    display: flex;
+} */
+#search-check:checked~.search-content {
+    display: flex;
+    position: fixed;
+}
+
+.btn a {
     font-size: 1.1rem;
     gap: 10px;
     text-decoration: none;
-    color: rgb(6, 129, 2) ;
-}
-.contenue{
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    gap: 30px;
-    align-items: center;
-    margin: 30px 5%;
-}
-.contenue div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-     width: 400px;
-     height: 400px;
-     overflow: hidden;
-}
-.Gastronomie img{
-    width: 400px;
+    color: rgb(6, 129, 2);
 }
 
-.contenue img {
-    width: 400px;
-    height: 400px;
+.btn:hover {
+    transform: translateY(-5px);
+
 }
+
+footer {
+    color: #fff;
+    font-family: 'Geis-pixel';
+    background: rgb(2, 221, 75);
+    height: 30;
+}
+
+.localisation {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.localisation img {
+    width: 20px;
+    height: 10vh;
+}
+
+/* Très petits téléphones */
+@media (max-width: 320px) {}
+
+/* Téléphones */
+@media (min-width: 321px) and (max-width: 480px) {}
+
+/* Grandes tailles de téléphone */
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* Tablettes */
+@media (min-width: 768px) and (max-width: 1023px) {}
+
+/* Ordinateurs portables */
+@media (min-width: 1024px) and (max-width: 1439px) {}
+
+/* Grands écrans */
+@media (min-width: 1440px) {}

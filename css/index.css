@@ -33,10 +33,10 @@ body::-webkit-scrollbar {
 header {
     background: rgb(2, 221, 75);
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
     flex-direction: row;
-    gap: 100px;
+    /* gap: 100px; */
     width: 100%;
     height: 10vh;
 }
@@ -50,7 +50,7 @@ header h1 span {
     color: rgb(26, 104, 0);
 }
 
-.bouton-active {
+.open,.close {
     display: none;
 }
 
@@ -99,7 +99,7 @@ header h1 span {
 }
 
 
-.nav nav a {
+.nav a {
     margin: 0 0 0 20px;
     text-decoration: none;
     color: #ffffff;
@@ -107,28 +107,23 @@ header h1 span {
     font-family: 'Geis-pixel';
 }
 
-.nav nav .lien ul {
+.nav a {
     display: flex;
     flex-direction: row;
 }
 
-.nav nav li {
-    position: relative;
-    list-style: none;
-    overflow: hidden;
-    z-index: 0;
-}
+
 
 label {
     cursor: pointer;
 }
-.nav nav a {
+.nav a {
     position: relative;
     display: inline-block; /* pour que le pseudo-élément suive bien la taille du texte */
     padding-bottom: 5px;
 }
 
-.nav nav a::before {
+.nav a::before {
     content: '';
     position: absolute;
     left: 0;
@@ -141,7 +136,7 @@ label {
     transition: transform 0.4s ease-in-out;
 }
 
-.nav nav a:hover::before {
+.nav a:hover::before {
     transform: scaleX(1);
 }
 
@@ -223,7 +218,6 @@ label {
 }
 
 .card:hover {
-    /* transition: 1s ease-in-out; */
     transform: rotateY(180deg);
 }
 
@@ -326,21 +320,115 @@ footer {
     width: 20px;
     height: 10vh;
 }
+@media (max-width:315px) {
+    .nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 30%;
+    height: 50%;
+    background: rgb(2, 221, 75);
+    flex-direction: column;
+    z-index: 20;
+    transition: all 1s ease-in;
+   }
+   .nav a {
+    margin-bottom: 20px;
+   }
 
-/* Très petits téléphones */
-@media (max-width: 320px) {}
+   .open,.close{
+    display: flex;
+   }
+   #check:checked ~ .nav{
+    display: flex;
+    right: 0;
+    transition: all 1s ease-out;
+
+   }
+}
 
 /* Téléphones */
-@media (min-width: 321px) and (max-width: 480px) {}
+@media (min-width: 321px) and (max-width: 480px) {
+  .nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 30%;
+    height: 50%;
+    background: rgb(2, 221, 75);
+    flex-direction: column;
+    z-index: 20;
+    transition: all 1s ease-in;
+   }
+   .nav a {
+    margin-bottom: 20px;
+   }
+   .titre{
+    font-size: 0.6rem;
+   }
+   .open,.close{
+    display: flex;
+   }
+   #check:checked ~ .nav{
+    display: flex;
+    right: 0;
+    transition: all 1s ease-out;
+
+   }
+}
 
 /* Grandes tailles de téléphone */
-@media (min-width: 481px) and (max-width: 767px) {}
+@media (min-width: 481px) and (max-width: 767px) {
+   .nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 30%;
+    height: 50%;
+    background: rgb(2, 221, 75);
+    flex-direction: column;
+    z-index: 20;
+    transition: all 1s ease-in;
+   }
+   .nav a {
+    margin-bottom: 20px;
+   }
+
+   .open,.close{
+    display: flex;
+   }
+   #check:checked ~ .nav{
+    display: flex;
+    right: 0;
+    transition: all 1s ease-out;
+
+   }
+}
 
 /* Tablettes */
-@media (min-width: 768px) and (max-width: 1023px) {}
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+   .nav{
+    display: none;
+
+   }
+   .open{
+    display: flex;
+   }
+   .titre{
+    display: none;
+   }
+}
 
 /* Ordinateurs portables */
-@media (min-width: 1024px) and (max-width: 1439px) {}
+@media (min-width: 1024px) and (max-width: 1439px) {
+    
+}
 
 /* Grands écrans */
-@media (min-width: 1440px) {}
+@media (min-width: 1440px) {
+    
+}

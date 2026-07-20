@@ -326,8 +326,8 @@ footer {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 30%;
-    height: 50%;
+    width: 315px;
+    /* height: ; */
     background: rgb(2, 221, 75);
     flex-direction: column;
     z-index: 20;

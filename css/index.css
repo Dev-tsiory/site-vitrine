@@ -321,16 +321,20 @@ footer {
     height: 10vh;
 }
 @media (max-width:315px) {
-    body,html{
-        overflow-x: hidden;
+    body{
+        overflow: hidden;
         width: 100%;
     }
+    footer{
+        width: 100%;
+    }
+    
     .nav {
     display: flex;
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 315px;
+    right: 0;
+    width: 100%;
     background: rgb(2, 221, 75);
     flex-direction: column;
     z-index: 20;
@@ -380,6 +384,13 @@ footer {
     transition: all 1s ease-out;
 
    }
+     body{
+        overflow: hidden;
+        width: 100%;
+    }
+    footer{
+        width: 100%;
+    }
 }
 
 /* Grandes tailles de téléphone */

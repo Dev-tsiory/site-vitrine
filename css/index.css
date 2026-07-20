@@ -322,19 +322,19 @@ footer {
 }
 @media (max-width:315px) {
     body{
-        overflow: hidden;
+        overflow-x: hidden;
         width: 100%;
     }
-    footer{
+    /* footer{
         width: 100%;
-    }
+    } */
     
     .nav {
     display: flex;
     position: fixed;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 30%;
     background: rgb(2, 221, 75);
     flex-direction: column;
     z-index: 20;
@@ -385,12 +385,14 @@ footer {
 
    }
      body{
-        overflow: hidden;
+        overflow-x: hidden;
         width: 100%;
     }
-    footer{
-        width: 100%;
+    .contenue{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
     }
+  
 }
 
 /* Grandes tailles de téléphone */

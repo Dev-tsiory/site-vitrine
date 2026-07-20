@@ -321,13 +321,16 @@ footer {
     height: 10vh;
 }
 @media (max-width:315px) {
+    body,html{
+        overflow-x: hidden;
+        width: 100%;
+    }
     .nav {
     display: flex;
     position: fixed;
     top: 0;
     right: -100%;
     width: 315px;
-    /* height: ; */
     background: rgb(2, 221, 75);
     flex-direction: column;
     z-index: 20;

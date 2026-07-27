@@ -29,7 +29,6 @@ main {
 
 .remerciement h2 {
     font-family: 'Geis-pixel';
-    color: var(--vert-principal);
     font-size: 2rem;
     margin-bottom: 14px;
     position: relative;
@@ -44,7 +43,6 @@ main {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: var(--or);
     border-radius: 3px;
 }
 
@@ -92,7 +90,7 @@ form {
     border-radius: 10px;
     font-size: 0.95rem;
     font-family: inherit;
-    transition: border-color .3s ease;
+    transition: .3s ease;
 }
 
 .field input:focus {
@@ -125,7 +123,7 @@ form textarea {
     font-family: inherit;
     font-size: 0.95rem;
     outline: none;
-    transition: border-color .3s ease;
+    transition: .3s ease;
 }
 
 form textarea:focus {
@@ -152,7 +150,6 @@ form input[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
-/* ---- Footer ---- */
 .footer {
     color: #fff;
     background: rgb(2, 221, 75);
@@ -188,7 +185,6 @@ form input[type="submit"]:hover {
 }
 
 .contact i {
-    color: var(--or);
     width: 18px;
     text-align: center;
 }
@@ -210,26 +206,21 @@ form input[type="submit"]:hover {
     font-size: 0.9rem;
 }
 
-@media (max-width:768px) {
-    .footer-container {
-        display: grid;
-        justify-content: center;
-        grid-template-columns: 1;
+@media (max-width:379px){
+    body{
+        width: 100%;
     }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-
-    .footer-container {
+    .field-content{
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
     }
-}
-
-@media (min-width: 481px) and (max-width: 767px) {
-    .footer-container {
+    .footer-container{
         display: grid;
-        justify-content: center;
-        grid-template-columns: 1;
+        width: 100%;
+    }
+    .box h2{
+        font-size: 1.5rem;
+    }
+    .box iframe{
+        width: 270px;
     }
 }

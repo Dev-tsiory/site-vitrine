@@ -256,7 +256,6 @@ form input[type="submit"]:hover {
     }
 
     form textarea {
-        rows: 6;
         min-height: 140px;
     }
 

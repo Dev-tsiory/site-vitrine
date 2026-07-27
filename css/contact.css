@@ -35,16 +35,6 @@ main {
     padding-bottom: 14px;
 }
 
-.remerciement h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    border-radius: 3px;
-}
 
 .remerciement p {
     color: #555;
@@ -205,22 +195,122 @@ form input[type="submit"]:hover {
     color: #ccc;
     font-size: 0.9rem;
 }
+@media (max-width: 768px) {
+    main {
+        padding: 40px 16px 16px;
+    }
 
-@media (max-width:379px){
-    body{
-        width: 100%;
+    .remerciement h2 {
+        font-size: 1.6rem;
     }
-    .field-content{
+
+    .remerciement p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    form {
+        margin: 10px 10px;
+        padding: 30px 24px;
+        border-radius: 20px;
+    }
+
+    .footer {
+        padding: 50px 6%;
+    }
+
+    .footer-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .box {
+        width: 100%;
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 30px 12px 12px;
+    }
+
+    .remerciement h2 {
+        font-size: 1.4rem;
+    }
+
+    .field-content {
+        display: grid;
+        gap: 16px;
+    }
+
+    .field {
+        height: 46px;
+    }
+
+    form {
+        padding: 24px 18px;
+        gap: 18px;
+        border-radius: 16px;
+    }
+
+    form textarea {
+        rows: 6;
+        min-height: 140px;
+    }
+
+    form input[type="submit"] {
+        align-self: stretch;
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    .footer iframe {
+        height: 220px;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 379px) {
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .field-content {
         display: grid;
     }
-    .footer-container{
+
+    .footer-container {
         display: grid;
         width: 100%;
     }
-    .box h2{
-        font-size: 1.5rem;
+
+    .box h2 {
+        font-size: 1.3rem;
     }
-    .box iframe{
-        width: 270px;
+
+    .box p {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .box iframe {
+        width: 100%;
+        max-width: 270px;
+        height: 200px;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 0.7rem;
+        width: 100%;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

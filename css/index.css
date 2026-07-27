@@ -489,9 +489,9 @@ footer {
         padding: 40px 0;
         height: 60vh;
     }
-
+    
     .intro h1 {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .intro p {
@@ -514,16 +514,16 @@ footer {
         z-index: 20;
         transition: all 1s ease-in;
     }
-
+    
     .nav a {
         margin-bottom: 20px;
     }
-
+    
     .open,
     .close {
         display: flex;
     }
-
+    
     #check:checked~.nav {
         display: flex;
         right: 0;
@@ -532,6 +532,7 @@ footer {
     }
     .intro{
         height: 20vh;
+        line-height: 1px;
     }
 }
 
@@ -584,7 +585,7 @@ footer {
     }
 
     .intro{
-        height: 40vh;
+        height: 100vh;
     }
     .contenue {
         display: grid;

@@ -19,7 +19,7 @@
             </svg>
         </label>
         <div class="search">
-            <input type="checkbox" name="" id="search-check" hidden>
+            <input type="checkbox" name="" id="search-check">
             <div class="search-content">
                 <label for="search-check">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,86 +35,90 @@
         <div class="titre">
             <h1>AMBOVOMBE<span>-ANDROY</span></h1>
         </div>
-        <input type="checkbox" name="" id="check" hidden>
         <label for="check" class="open bouton-active">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M20.75 7a.75.75 0 01-.75.75H4a.75.75 0 010-1.5h16a.75.75 0 01.75.75zm0 5a.75.75 0 01-.75.75H4a.75.75 0 010-1.5h16a.75.75 0 01.75.75zm0 5a.75.75 0 01-.75.75H4a.75.75 0 010-1.5h16a.75.75 0 01.75.75z"
-                    fill="#000" />
+                    fill="#fff" />
             </svg>
         </label>
+        <input type="checkbox" name="" id="check">
         <div class="nav">
-            <nav>
-                <label for="check" class="close bouton-active">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M6.995 7.006a1 1 0 000 1.415l3.585 3.585-3.585 3.585a1 1 0 101.414 1.414l3.585-3.585 3.585 3.585a1 1 0 001.415-1.414l-3.586-3.585 3.586-3.585a1 1 0 00-1.415-1.415l-3.585 3.585L8.41 7.006a1 1 0 00-1.414 0z"
-                            fill="#0F0F0F" />
-                    </svg>
-                </label>
-                <div class="lien">
-                    <ul>
-                        <li><a href="./index.html">Accueil</a></li>
-                        <li><a href="">Histoire</a></li>
-                        <li><a href="">Gastronomie</a></li>
-                        <li><a href="">Tourisme</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <label for="check" class="close bouton-active">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M6.995 7.006a1 1 0 000 1.415l3.585 3.585-3.585 3.585a1 1 0 101.414 1.414l3.585-3.585 3.585 3.585a1 1 0 001.415-1.414l-3.586-3.585 3.586-3.585a1 1 0 00-1.415-1.415l-3.585 3.585L8.41 7.006a1 1 0 00-1.414 0z"
+                        fill="#fff" />
+                </svg>
+            </label>
+
+            <a href="./index.html">Accueil</a>
+            <a href="">Histoire</a>
+            <a href="">Gastronomie</a>
+            <a href="">Tourisme</a>
+            <a href="./contact.html">Contact</a>
         </div>
     </header>
     <main>
         <div class="remerciement">
-    
+            <h2>Merci pour votre soutien</h2>
+            <p>
+                Chaque message compte pour faire connaître la région d'Ambovombe Androy
+                et ses habitants. Merci de prendre le temps de nous écrire.Si vous avez plus de question envoyer-nous un
+                message
+            </p>
         </div>
         <div class="envoie-email">
             <form action="">
-                <input type="text" class="nom">
-                <input type="email" name="" id="" class="email">
-                <textarea name="" id="" class="message" cols="50" rows="20"></textarea>
+                <div class="field-content">
+                    <div class="field">
+                        <input type="text" id="nom" required>
+                        <label for="nom">Nom </label>
+                    </div>
+                    <div class="field">
+                        <input type="email" name="" id="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <textarea name="" id="" class="message" cols="40" rows="10" placeholder="En un message ..."></textarea>
                 <input type="submit" value="Envoyer">
             </form>
 
         </div>
     </main>
     <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-box">
-            <h2>Commune Urbaine d'Ambovombe Androy</h2>
+        <div class="footer-container">
+            <div class="footer-box box">
+                <h2>Commune Urbaine d'Ambovombe Androy</h2>
 
-            <p>
-                La Commune Urbaine d'Ambovombe Androy est au service des citoyens
-                et contribue au développement local tout en valorisant le patrimoine
-                culturel de la région Androy.
-            </p>
+                <p>
+                    La Commune Urbaine d'Ambovombe Androy est au service des citoyens
+                    et contribue au développement local tout en valorisant le patrimoine
+                    culturel de la région Androy.
+                </p>
 
-            <div class="contact">
-                <p> Ambovombe Androy, Madagascar</p>
+                <div class="contact">
+                    <p> Ambovombe Androy, Madagascar</p>
 
-                <p>+261 XX XX XXX XX</p>
+                    <p>+261 XX XX XXX XX</p>
 
-                <p>contact@ambovombe.mg</p>
+                    <p>contact@ambovombe.mg</p>
 
-                <p> Lun - Ven : 08h00 - 16h30</p>
+                </div>
+            </div>
+
+            <div class="footer-box box">
+                <h2>Nous trouver</h2>
+
+                <iframe src="https://www.google.com/maps?q=Ambovombe%20Androy,%20Madagascar&output=embed" loading="lazy"
+                    allowfullscreen="">
+                </iframe>
             </div>
         </div>
 
-        <!-- Carte -->
-        <div class="footer-box">
-            <h2>Nous trouver</h2>
-
-            <iframe
-                src="https://www.google.com/maps?q=Ambovombe%20Androy,%20Madagascar&output=embed"
-                loading="lazy"
-                allowfullscreen="">
-            </iframe>
+        <div class="copyright">
+            © 2026 Commune Urbaine d'Ambovombe Androy - Tous droits réservés.
         </div>
-    </div>
-
-    <div class="copyright">
-        © 2026 Commune Urbaine d'Ambovombe Androy - Tous droits réservés.
-    </div>
 
 </body>
 
